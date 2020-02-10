@@ -9,6 +9,20 @@ public class ContactsManager {
     private String name;
     private double phone;
 
+    public ContactsManager(String name, double phone){
+        this.name = name;
+        this.phone =  phone;
+    }
+
+//    Setters
+    public void setName (String name) {this.name =name; }
+    public void setPhone (double phone) {this.phone = phone; }
+
+//    Getters
+    public String getName () { return this.name; }
+    public double getPhone () { return this.phone; }
+
+
     public static void main (String [] args) {
 
         contactsFile(); // created contacts file
