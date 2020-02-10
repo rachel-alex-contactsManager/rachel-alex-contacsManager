@@ -12,6 +12,7 @@ public class ContactsManager {
     public static void main (String [] args) {
 
         contactsFile(); // created contacts file
+        readWriteContacts(); // read and writes to the file
 
     } // main method
 
@@ -37,5 +38,35 @@ public class ContactsManager {
         } // try-catch block end
 
     } // create contacts file method
+
+    static void readWriteContacts() {
+
+        List<String> people = new ArrayList<>();
+        try {
+            Path contactsFile = Paths.get("data", "contacts.txt");
+            people = Files.readAllLines(contactsFile);
+            for (String line : people) {
+                System.out.println(line);
+            }
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+        } // try-catch block to read file
+
+        people.add("rachel"); people.add("weeb");
+        try {
+            Path contactsFile = Paths.get("data", "contacts.txt");
+            Files.write(contactsFile, people);
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+        } // try-catch block to write to the file
+
+    } // end readWrite contacts method
+
+    public static void printMenu() {
+        System.out.println("User Contacts");
+        System.out.println("\nHere is a list of contacts: \n");
+        int i =1;
+        System.out.print(" | ");
+    }
 
 } // public class end
