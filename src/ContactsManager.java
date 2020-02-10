@@ -6,6 +6,9 @@ import java.util.*;
 
 public class ContactsManager {
 
+    private String name;
+    private double phone;
+
     public static void main (String [] args) {
 
         contactsFile(); // created contacts file
