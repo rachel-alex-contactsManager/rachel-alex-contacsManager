@@ -4,10 +4,11 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
 
+
 public class ContactsManager {
 
-    private String name;
-    private long phone;
+    private static String name;
+    private static long phone;
 
     public ContactsManager(String name, long phone){
         this.name = name;
@@ -24,12 +25,19 @@ public class ContactsManager {
 
     public static void main (String [] args) {
 
-        ContactsManager weeb2 = new ContactsManager("alex", 8303232);
-        ContactsManager weeb3= new ContactsManager("david", 8304343);
+        ContactsManager contact1 = new ContactsManager("alex", 8303232);
+        ContactsManager contact2 = new ContactsManager("david", 8304343);
         contactsFile(); // created contacts file
         readWriteContacts(); // read and writes to the file
+        printContact();
 
     } // main method
+
+    private static void printContact () {
+        System.out.printf("here is a contact: \n");
+        System.out.printf("name: %s" + " | " +"phone number: %d", ContactsManager.name, ContactsManager.phone);
+
+    }
 
     static void contactsFile() {
         String directory = "data";
