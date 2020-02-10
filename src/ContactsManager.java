@@ -7,24 +7,25 @@ import java.util.*;
 public class ContactsManager {
 
     private String name;
-    private double phone;
+    private long phone;
 
-    public ContactsManager(String name, double phone){
+    public ContactsManager(String name, long phone){
         this.name = name;
         this.phone =  phone;
     }
 
 //    Setters
     public void setName (String name) {this.name =name; }
-    public void setPhone (double phone) {this.phone = phone; }
+    public void setPhone (long phone) {this.phone = phone; }
 
 //    Getters
     public String getName () { return this.name; }
-    public double getPhone () { return this.phone; }
-
+    public long getPhone () { return this.phone; }
 
     public static void main (String [] args) {
 
+        ContactsManager weeb2 = new ContactsManager("alex", 8303232);
+        ContactsManager weeb3= new ContactsManager("david", 8304343);
         contactsFile(); // created contacts file
         readWriteContacts(); // read and writes to the file
 
