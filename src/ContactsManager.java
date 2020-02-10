@@ -8,9 +8,9 @@ public class ContactsManager {
 
     public static void main (String [] args) {
 
-        contactsFile();
+        contactsFile(); // created contacts file
 
-    }
+    } // main method
 
     static void contactsFile() {
         String directory = "data";
@@ -31,8 +31,8 @@ public class ContactsManager {
             }
         } catch (IOException ioe) {
             ioe.printStackTrace();
-        }
+        } // try-catch block end
 
-    }
+    } // create contacts file method
 
-}
+} // public class end
