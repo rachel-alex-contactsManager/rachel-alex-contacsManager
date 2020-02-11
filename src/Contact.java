@@ -1,6 +1,6 @@
-import java.io.Serializable;
 
-public class Contact implements Serializable {
+
+public class Contact {
 
     private static final long serialVersionUID = 1L;
     private String firstName;
