@@ -24,7 +24,16 @@ public class Contact {
         this.phone = phone;
     }
 
-//    public static void contactString(String firstName, String lastName, long phone) {
-//        return firstName+" "+lastName+" | "+phone;
-//    }
+
+    public String toString() {
+       return new StringBuffer(" |First Name: ").append(this.firstName)
+               .append(" Last Name: ").append(this.lastName).append(" Phone Number: ").append(this.phone).toString();
+    }
+
+
+
+
+
+
+
 }
