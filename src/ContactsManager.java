@@ -10,8 +10,17 @@ public class ContactsManager {
     private static String name;
     private static long phone;
     private static List contactList;
+    private static Scanner scanner = new Scanner(System.in);
+    private static List <String> menuList = new ArrayList<>();
+    private static List <String> crudParameters = new ArrayList<>();
+    private static List <String> Continue = new ArrayList<>();
 
     public static void main (String [] args) {
+
+//        Menu list set up
+        menuList = Arrays.asList("View Contacts.", "Search", "Add", "Delete", "Exit.\n__" );
+        crudParameters = Arrays.asList("First Name", "Last Name", "Phone\n__");
+        Continue = Arrays.asList("Continue?.\n___");
 
 
         Contact contact1 = new Contact("leo", "dicaprio", 8768990);
