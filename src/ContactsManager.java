@@ -9,37 +9,24 @@ public class ContactsManager {
 
     private static String name;
     private static long phone;
-
-    public ContactsManager(String name, long phone){
-        this.name = name;
-        this.phone =  phone;
-    }
-
-//    Setters
-    public void setName (String name) {this.name =name; }
-    public void setPhone (long phone) {this.phone = phone; }
-
-//    Getters
-    public String getName () { return this.name; }
-    public long getPhone () { return this.phone; }
+    private static List contactList;
 
     public static void main (String [] args) {
 
-        ContactsManager contact1 = new ContactsManager("alex", 8303232);
-        ContactsManager contact2 = new ContactsManager("david", 8304343);
-        ContactsManager contact3 = new ContactsManager("rachel", 8559867);
+        Contact contact1 = new Contact("leo", "dicaprio", 8768990);
+        Contact contact2 = new Contact("matt", "damon", 2108754);
+        Contact contact3 = new Contact("keanu", "reeves", 2199435);
+
+        List<String> contactList = new ArrayList<>();
+        contactList.add(contact1.toString());
+        contactList.add(contact2.toString());
+        contactList.add(contact3.toString());
+        System.out.println(contactList); // need to find way to convert contacts to print correctly, instead of toString()
+
         contactsFile(); // created contacts file
         readWriteContacts(); // read and writes to the file
 
-//        printContact();
-
     } // main method
-
-//    private static void printContact () {
-//        System.out.printf("here is a contact: \n");
-//        System.out.printf("name: %s" + " | " +"phone number: %d", ContactsManager.name, ContactsManager.phone);
-//
-//    }
 
     static void contactsFile() {
         String directory = "data";
@@ -66,32 +53,34 @@ public class ContactsManager {
 
     static void readWriteContacts() {
 
-        List<String> people = new ArrayList<>();
+        List<String> contact = new ArrayList<>();
         try {
             Path contactsFile = Paths.get("data", "contacts.txt");
-            people = Files.readAllLines(contactsFile);
-            for (String line : people) {
-                System.out.println(line);
+            contact = Files.readAllLines(contactsFile);
+            for (Object Contact : contact) {
+                System.out.println("----------------------------------");
+                System.out.println(contact+"!");
             }
         } catch (IOException ioe) {
             ioe.printStackTrace();
         } // try-catch block to read file
 
-        people.add("rachel"); people.add("weeb");
+        contact.add(""); contact.add("");
         try {
             Path contactsFile = Paths.get("data", "contacts.txt");
-            Files.write(contactsFile, people);
+            Files.write(contactsFile, contact);
+            System.out.println("----------------------------------");
         } catch (IOException ioe) {
             ioe.printStackTrace();
         } // try-catch block to write to the file
 
     } // end readWrite contacts method
 
-    public static void printMenu() {
-        System.out.println("User Contacts");
-        System.out.println("\nHere is a list of contacts: \n");
-        int i =1;
-        System.out.print(" | ");
-    }
+//    public static void printMenu() {
+//        System.out.println("User Contacts");
+//        System.out.println("\nHere is a list of contacts: \n");
+//        int i =1;
+//        System.out.print(" | ");
+//    }
 
 } // public class end
