@@ -27,17 +27,19 @@ public class ContactsManager {
 
         ContactsManager contact1 = new ContactsManager("alex", 8303232);
         ContactsManager contact2 = new ContactsManager("david", 8304343);
+        ContactsManager contact3 = new ContactsManager("rachel", 8559867);
         contactsFile(); // created contacts file
         readWriteContacts(); // read and writes to the file
-        printContact();
+
+//        printContact();
 
     } // main method
 
-    private static void printContact () {
-        System.out.printf("here is a contact: \n");
-        System.out.printf("name: %s" + " | " +"phone number: %d", ContactsManager.name, ContactsManager.phone);
-
-    }
+//    private static void printContact () {
+//        System.out.printf("here is a contact: \n");
+//        System.out.printf("name: %s" + " | " +"phone number: %d", ContactsManager.name, ContactsManager.phone);
+//
+//    }
 
     static void contactsFile() {
         String directory = "data";
