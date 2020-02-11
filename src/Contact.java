@@ -1,5 +1,8 @@
-public class Contact {
+import java.io.Serializable;
 
+public class Contact implements Serializable {
+
+    private static final long serialVersionUID = 1L;
     private String firstName;
     private String lastName;
     private long phone;
@@ -24,6 +27,7 @@ public class Contact {
         this.phone = phone;
     }
 
+    // converts object to a string
 
     public String toString() {
        return new StringBuffer(" |First Name: ").append(this.firstName)
