@@ -3,8 +3,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
-import java.io.FileOutputStream;
-import java.io.ObjectOutputStream;
 
 
 public class ContactsManager {
@@ -12,13 +10,11 @@ public class ContactsManager {
     private static String name;
     private static long phone;
     private static List contactList;
-    private static final String filepath = "contacts.txt";
 
     public static void main (String [] args) {
 
-        ContactsManager objectIO = new ContactsManager();
+
         Contact contact1 = new Contact("leo", "dicaprio", 8768990);
-        ContactsManager.WriteObjectToFile(contact1);
         Contact contact2 = new Contact("matt", "damon", 2108754);
         Contact contact3 = new Contact("keanu", "reeves", 2199435);
 
@@ -33,14 +29,7 @@ public class ContactsManager {
 
     } // main method
 
-    public void WriteObjectToFile(Object serObj) {
-        try {
-            FileOutputStream fileOut = new FileOutputStream(filepath);
-            ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);
-            objectOut.WriteObject(serObj);
 
-        }
-    }
 
     static void contactsFile() {
         String directory = "data";
