@@ -12,9 +12,9 @@ public class Contact {
 
     // getters
 
-    public String getFirstName() {return firstName;}
-    public String getLastName() { return lastName;}
-    public long getPhone() { return phone; }
+    public String getFirstName() {return this.firstName;}
+    public String getLastName() { return this.lastName;}
+    public long getPhone() { return this.phone; }
 
     // constructor
 
@@ -24,7 +24,7 @@ public class Contact {
         this.phone = phone;
     }
 
-    public static void contactString(String firstName, String lastName, long phone) {
-        return firstName+" "+lastName+" | "+phone;
-    }
+//    public static void contactString(String firstName, String lastName, long phone) {
+//        return firstName+" "+lastName+" | "+phone;
+//    }
 }

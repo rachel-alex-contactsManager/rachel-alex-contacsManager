@@ -57,17 +57,19 @@ public class ContactsManager {
         try {
             Path contactsFile = Paths.get("data", "contacts.txt");
             contact = Files.readAllLines(contactsFile);
-            for (String line : contact) {
-                System.out.println(line);
+            for (Object Contact : contact) {
+                System.out.println("----------------------------------");
+                System.out.println(contact+"!");
             }
         } catch (IOException ioe) {
             ioe.printStackTrace();
         } // try-catch block to read file
 
-        contact.add("rachel"); contact.add("weeb");
+        contact.add(""); contact.add("");
         try {
             Path contactsFile = Paths.get("data", "contacts.txt");
             Files.write(contactsFile, contact);
+            System.out.println("----------------------------------");
         } catch (IOException ioe) {
             ioe.printStackTrace();
         } // try-catch block to write to the file
