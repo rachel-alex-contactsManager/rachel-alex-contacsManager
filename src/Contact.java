@@ -2,29 +2,37 @@
 
 public class Contact {
 
-    private static final long serialVersionUID = 1L;
     private String firstName;
     private String lastName;
-    private long phone;
+    private String phone;
 
     // setters
 
     public void setFirstName(String firstName) { this.firstName = firstName; }
     public void setLastName(String lastName) { this.lastName = lastName; }
-    public void setPhone(long phone) { this.phone = phone; }
+    public void setPhone(String phone) { this.phone = phone; }
 
     // getters
 
     public String getFirstName() {return this.firstName;}
     public String getLastName() { return this.lastName;}
-    public long getPhone() { return this.phone; }
+    public String getPhone() { return this.phone; }
+
+    // id method
+    private static long counter = -1;
+    private long id;
+    public long getId() {
+        return this.id;
+    }
 
     // constructor
 
-    Contact (String firstName, String lastName, long phone) {
+    Contact(String firstName, String lastName, String phone) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.phone = phone;
+        this.id = counter;
+        counter++;
     }
 
     // converts object to a string
@@ -33,11 +41,5 @@ public class Contact {
        return new StringBuffer(" |First Name: ").append(this.firstName)
                .append(" Last Name: ").append(this.lastName).append(" Phone Number: ").append(this.phone).toString();
     }
-
-
-
-
-
-
 
 }
