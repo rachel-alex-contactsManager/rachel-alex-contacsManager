@@ -1,5 +1,3 @@
-
-
 public class Contact {
 
     private static final long serialVersionUID = 1L;
@@ -30,8 +28,8 @@ public class Contact {
     // converts object to a string
 
     public String toString() {
-       return new StringBuffer(" |First Name: ").append(this.firstName)
-               .append(" Last Name: ").append(this.lastName).append(" Phone Number: ").append(this.phone).toString();
+        return new StringBuffer(" |First Name: ").append(this.firstName)
+                .append(" Last Name: ").append(this.lastName).append(" Phone Number: ").append(this.phone).toString();
     }
 
 
